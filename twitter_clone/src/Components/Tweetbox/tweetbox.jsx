@@ -1,121 +1,100 @@
-
-import React from 'react'
-import { useEffect, useState } from 'react'
-import Post from '../Post/Post'
+import React from "react";
+import { useEffect, useState } from "react";
+import Post from "../Post/Post";
 // import FlipMove from 'react-flip-move'
-import Icons from '../2nd-1/PostUpdater/icons'
+import Icons from "../2nd-1/PostUpdater/icons";
 
 function Tweetbox() {
+  const [data, setData] = useState([]);
+  const [user, setUser] = useState([]);
 
-    const [data, setData] = useState([])
-    const [user, setUser] = useState([])
+  useEffect(() => {
+    // profiles
+    fetch("/tweet.json")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        // console.log(data)
+        setData(data);
+      })
+      .catch((err) => console.log(err));
 
-    useEffect(() => {
-        // profiles
-        fetch("/tweet.json")
-            .then((res) => {
-                return res.json()
-            }).then((data) => {
-                // console.log(data)
-                setData(data)
-            })
-            .catch((err) => console.log(err))
+    fetChData();
+  }, []);
 
-        fetChData()
+  const fetChData = () => {
+    fetch("/users.json")
+      .then((user) => {
+        return user.json();
+      })
+      .then((data) =>
+        // console.log(data[0])
+        setUser(data)
+      )
+      .catch((err) => console.log(err));
+  };
 
-    }, [])
+  const AddStyle = {
+    backgroundColor: "#fed9ff",
+    width: "45vw",
+    height: "90vh",
 
+    overflowY: "scroll",
+    textAlign: "center",
+    padding: "20px",
+  };
+  const userStyle = {
+    display: "flex",
+    h4: {
+      margin: "10px",
+    },
+  };
 
-    const fetChData = () => {
-        fetch("/users.json")
-            .then((user) => {
-                return user.json()
-            }).then((data) =>
-                // console.log(data[0])
-                setUser(data)
-            ).catch((err) => console.log(err))
-    }
+  return (
+    <>
+      <h2>Home</h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <h3>For you</h3>
+        <h3>Following</h3>
+      </div>
 
-    const AddStyle = {
-        backgroundColor: "#fed9ff",
-        width: "45vw",
-        height: "90vh",
-        
-        overflowY: "scroll",
-        textAlign: "center",
-        padding: "20px",
-       
-    }
-    const userStyle = {
-        display: "flex",
-        h4 : {
-            margin : "10px"
-        }
-        
-    }
+      <div style={AddStyle}>
+        <Icons />
 
+        <div>
+          {data.map((ele, i) => {
+            return (
+              <div>
+                <div key={ele.id}>
+                  <div style={userStyle}>
+                    <img
+                      style={{
+                        borderRadius: "50%",
+                        width: "10%",
+                        height: "40%",
+                      }}
+                      src={user[i]?.image}
+                      alt=""
+                    />
+                    <h4 style={userStyle.h4}>{ele.tweetedBy.name}</h4>
+                  </div>
 
-    return (
-        <>
-         <h2>Home</h2>
-         <div style={{
-      display:"flex",
-      justifyContent:"space-between"
-    }}>
-      
-      <h3>For you</h3>
-      <h3>Following</h3>
-    </div>
-
-   
-        <div style={AddStyle}>
-        <Icons/>
-   
-           
-            <div>
-
-            {data.map((ele, i) => {
-                return (
-                    <div>
-                       <div key={ele.id} >
-                            <div style={userStyle}>
-                                <img style={{
-                                    borderRadius: "50%",
-                                    width: "10%",
-                                    height: "40%"
-                                }} src={user[i]?.image} alt='' />
-                                <h4 style={userStyle.h4}>{ele.tweetedBy.name}</h4>
-                           </div>
-                            {/* <p style={{marginLeft:"-15rem", marginTop:"-1.5rem"}}>{user[i]?.email}</p> */}
-                            <p>{ele.content}</p>
-
-                           
-
-                            {/* <h4>{ele.tweetedBy.id}</h4> */}
-                            {/* <img src={ele.image} alt="loading" />
-                            <h1>{ele.name}</h1> */}
-{/*                             
-                             <span>{ele.likeCount}</span>
-                             <span>{ele.commentCount}</span>
-                             <span>{ele.reTweetsCount}</span> */}
-                             {/* <span>{ele.isLiked}</span>  */}
-                            {/* <Post likeCount = {ele.isLiked} id = {ele.tweetedBy.id}/> */}
-                            {/* <p>{ele.createdAt}</p> */}
-                        </div> 
-                        <Post {...ele}/>
-                    </div>
-                )
-            }
-
-
-            )
-
-            }
-            </div>
-            </div>
-
-            </>
-    )
+                  <p>{ele.content}</p>
+                </div>
+                <Post {...ele} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Tweetbox
+export default Tweetbox;
