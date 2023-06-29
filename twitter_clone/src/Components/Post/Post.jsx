@@ -24,7 +24,7 @@ const Post = (props) => {
       setLike(pre => pre+1)
       likeRef.current.style.color = "red"
     }else{
-      setLike(like - 1 )
+      setLike(pre => pre-1)
       likeRef.current.style.color = "black"
     }
     console.log(like)
