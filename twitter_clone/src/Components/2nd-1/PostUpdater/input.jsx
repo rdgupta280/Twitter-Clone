@@ -43,12 +43,13 @@ export default function MultilineTextFields(props) {
         fontSize:"25px",
         color:"black",
         fontWeight:"600",
-        marginLeft:"600px",
-        marginTop:"-300px",
-       
+        marginLeft:"10.5em",
+        marginTop:"-1rem",
+       marginBottom:"1rem",
         borderRadius:"10px",
-        border:"none",
-        // marginBottom:"50px"
+        // border:"5px solid green",
+        
+      
         padding:"5px 5px"
 
       

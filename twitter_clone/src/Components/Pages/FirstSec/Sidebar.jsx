@@ -101,10 +101,12 @@ function Sidebar() {
           onClose={handleClose}
           id="long-menu"
           style={{
-            width: "300px",
-            padding: "10px",
-            marginTop: "50px",
-            // border :"5px solid blue"
+            width: "20%",
+            padding: "1em",
+            marginTop: "2rem",
+            // border :"5px solid blue",
+            height:"75%",
+            marginLeft:"0.5rem"
           }}
         >
           {options.map((option) => (
@@ -121,7 +123,8 @@ function Sidebar() {
           src="https://media.licdn.com/dms/image/C5603AQEgzoyp6PA72g/profile-displayphoto-shrink_400_400/0/1652029080190?e=1693440000&v=beta&t=mASqaUqDJvmUM0oY0Do5eb1eqhwYzcfP0rHlj4o689s"
           sx={{ width: "80px", height: "80px", mr: "20px" }}
         />
-        <div style={{width:"150px",height:"100px",marginRight:"80px"}}>
+        <div style={{width:"50%",height:"100%",marginRight:"2rem",
+      }}>
         {/* <h6>Shailja Gupta</h6> */}
         <h5>@Shailja2607</h5>
         <button className="hello"onClick={logOut}>Logout</button>

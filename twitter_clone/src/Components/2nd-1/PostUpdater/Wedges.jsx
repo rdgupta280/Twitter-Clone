@@ -18,12 +18,12 @@ function Widgets() {
       <div className="widgets__widgetContainer">
         <h2>What's happening</h2>
 
-        <TwitterTweetEmbed style={{background:"red"}} tweetId={"858551177860055040"} />
+        <TwitterTweetEmbed style={{backgroundColor:"red",border:"5px solid green"}} tweetId={"858551177860055040"} />
 
         <TwitterTimelineEmbed
           sourceType="profile"
           screenName="cleverqazi"
-          options={{ height: 400 , theme:"dark"}}
+          options={{ height: 400 }}
         />
 
         <TwitterShareButton

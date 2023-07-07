@@ -10,12 +10,16 @@ function Home() {
     <div>
       <div
         style={{
+          // border:"5px solid red",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
+          width:"100%",
+          // height:"80%"
         }}
       >
         <Sidebar />
-        <div>
+        <div style={{
+          width:"60%"}}>
         <Tweetbox/>
         </div>
         

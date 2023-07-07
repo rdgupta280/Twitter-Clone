@@ -1,33 +1,39 @@
 .sidebar{
-    width: 300px;
-    height: 90vh;
-    min-width: 250px;
+  /* border: 3px solid red; */
+    width: 100%;
+    height: 70%;
+    min-width: 25%;
     padding: 20px 20px;
-    /* margin: 20px auto 0 auto; */
+    
+    
     box-shadow: 0 0 6px hsl(210 14% 90%);
-    /* border: 5px solid blue; */
-   margin-left: -200px;
+   
+    
 
   }
-  /* .items{
-    margin-top: 20px;
-  }
- .links{
-  margin-top: 30px;
- } */
+ 
+  
+.items{
+  /* border: 5px solid green; */
+  height: 50%;
+}
+
+
+  
   #tweet{
     
-    width: 100%;
-    height: 50px;
+    width: 80%;
+    height: 2.5rem;
     background-color: hsl(203, 89%, 64%);
     border-radius: 20px;
     color: white;
     font-weight: 700;
     text-transform: inherit;
+    margin: 5px 0 2px 5px;
   }
 
   #moreLinks{
-    width: 100%;
+    width: 50%;
     margin-top: 20px;
     border-radius: 30px;
     font-weight: 700;
@@ -40,25 +46,26 @@
     padding-left: 10px;
     padding-right: 30px;
     margin-bottom: 5px;
+    /* border: 5px solid red; */
   }
   #moreLinks .MuiSvgIcon-root{
     margin-right: 20px;
   }
   #moreLinks:hover{
-    background-color: hsl(205, 92%, 95%);
-    color: hsl(203, 89%, 64%);
+    background-color: hsl(172, 77%, 75%);
+    color: hsl(200, 27%, 4%);
     transition: color 100ms ease-out;
   }
   #long-menu .MuiMenu-paper{
-    width: 220px;
-    max-height: 100vh;
+    width: 50%;
+    max-height: 80%;
     left: 40% !important;
     top: unset !important;
   }
   #long-menu .MuiListItem-root{
     padding-bottom: 15px;
     padding-top: 15px;
-    width: 500px;
+    width: 50%;
   }
   .MuiListItem-root:nth-child(6){
     border-bottom: 1px solid hsl(210, 12%, 95%);
@@ -70,40 +77,45 @@
     margin-right: 10px;
   }
   .MuiMenu-paper{
-    width: 500px !important;
+    width: 100% !important;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    height: 70vh;
+    height: 70%;
   }
   .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
     margin-top: 20px;
   }
 
   .all{
-    width: 200px;
+    /* border: 5px solid green; */
+    width: 25%;
+    height: 100%;
     display: flex;
     flex-direction: column;
    
   }
   .logout{
     display: flex;
-    width: 300px;
-    height: 200px;
-    margin-right: 50px;
-    margin-left: -200px;
+    width: 100%;
+    height: 20%;
+    /* margin-right: 50px;
+    margin-left: -200px; */
+    /* border: 5px solid rgb(22, 22, 212); */
 
   }
+  
+  
   .hello{
    
     font-weight: 700;
     color: black;
     border-radius: 15px;
     background-color: rgb(11, 192, 150);
-    width: 120px;
-    height: 50px;
-    padding: 5px;
+    width: 100%;
+    height: 50%;
+    padding: 10px;
     border: none;
     
   }

@@ -37,9 +37,10 @@ function Tweetbox() {
 
   const AddStyle = {
     backgroundColor: "#fed9ff",
-    width: "45vw",
+    width: "100%",
     height: "90vh",
-
+    marginRight:"0",
+    // border:"5px solid red",
     overflowY: "scroll",
     textAlign: "center",
     padding: "20px",
@@ -53,11 +54,12 @@ function Tweetbox() {
 
   return (
     <>
-      <h2>Home</h2>
+      <h2 style={{width:"100%"}}>Home</h2>
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
+          width:"100%"
         }}
       >
         <h3>For you</h3>
@@ -70,7 +72,7 @@ function Tweetbox() {
         <div>
           {data.map((ele, i) => {
             return (
-              <div>
+              <div style={{width:"100%"}}>
                 <div key={ele.id}>
                   <div style={userStyle}>
                     <img

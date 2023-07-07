@@ -106,8 +106,9 @@ function Icons() {
                   {add[0].name}
                 </h4>
               </div>
-              <div style={{backgroundColor:"whitesmoke",textAlign:"center",overflow:"hidden"}}>
-              <h5 style={{ width: "200px", height: "150px" }}>{el}</h5>
+              <div style={{backgroundColor:"whitesmoke",textAlign:"center",overflow:"hidden",height:"7rem"}}>
+              <h5 style={{ textAlign:"left", height: "10%",margin:"1rem"
+             }}>{el}</h5>
               </div>
               <div className="post__footer">
                 <ChatBubbleOutlineIcon fontSize="small" />
